@@ -1,0 +1,15 @@
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\bin\Debug\net6.0\BuissnesLayer.deps.json
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\bin\Debug\net6.0\BuissnesLayer.dll
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\bin\Debug\net6.0\BuissnesLayer.pdb
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\bin\Debug\net6.0\DataLayer.dll
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\bin\Debug\net6.0\DataLayer.pdb
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\obj\Debug\net6.0\BuissnesLayer.csproj.AssemblyReference.cache
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\obj\Debug\net6.0\BuissnesLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\obj\Debug\net6.0\BuissnesLayer.AssemblyInfoInputs.cache
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\obj\Debug\net6.0\BuissnesLayer.AssemblyInfo.cs
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\obj\Debug\net6.0\BuissnesLayer.csproj.CoreCompileInputs.cache
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\obj\Debug\net6.0\BuissnesLayer.csproj.CopyComplete
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\obj\Debug\net6.0\BuissnesLayer.dll
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\obj\Debug\net6.0\refint\BuissnesLayer.dll
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\obj\Debug\net6.0\BuissnesLayer.pdb
+C:\Users\uson\Documents\GitHub\Sotrudniki\BuissnesLayer\obj\Debug\net6.0\ref\BuissnesLayer.dll

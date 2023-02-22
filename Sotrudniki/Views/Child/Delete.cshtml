@@ -1,0 +1,47 @@
+﻿@using PresentationLayer.ViewModels;
+@model ChildViewModel;
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удаление </h1>
+
+<h3>Вы действительно хотите удалить?</h3>
+<div>
+    <h4>Данные сотрудника</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Child.SurName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Child.SurName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Child.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Child.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Child.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Child.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Child.BirthDay)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Child.BirthDay)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed">
+        <input type="hidden" asp-for="Child.Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-controller="Child" asp-action="index" asp-route-id="@Model.Child.SotrudnikId">Назад</a>
+    </form>
+</div>
+
