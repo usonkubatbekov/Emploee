@@ -1,0 +1,51 @@
+﻿@model Employees.ViewModels.ChildViewModel;
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удаление </h1>
+
+<h3>Вы действительно хотите удалить?</h3>
+<div>
+    <h4>Данные сотрудника</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Child.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Child.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Child.Surname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Child.Surname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Child.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Child.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Child.Lastname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Child.Lastname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Child.BirthDay)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Child.BirthDay)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteConfirmed" method="post" asp-route-id="@Model.Child.Id">
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-controller="Child" asp-action="Index" asp-route-id="@Model.Child.EmployeeId">Назад</a>
+    </form>
+</div>
+

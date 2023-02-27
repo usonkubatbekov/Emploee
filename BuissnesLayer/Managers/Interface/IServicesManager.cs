@@ -1,11 +1,10 @@
-﻿using PresentationLayer.Services;
-using ServiceLayer.Services;
+﻿using ServiceLayer.Services;
 
 namespace ServiceLayer.Managers.Interface
 {
     public interface IServicesManager
     {
-        SotrudnikService SotrudnikService { get; }
+        EmployeeService EmployeeService { get; }
         ChildService ChildService { get; }
     }
 }

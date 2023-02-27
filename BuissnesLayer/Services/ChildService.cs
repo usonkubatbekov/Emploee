@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using DataLayer.Entityes;
-using PresentationLayer.Models;
-using ServiceLayer.Dto;
+﻿using AutoMapper;
+using DataLayer.Entities;
+using ServiceLayer.Dtos;
 using ServiceLayer.Managers.Interface;
 using ServiceLayer.Services.Interface;
 
-namespace PresentationLayer.Services
+namespace ServiceLayer.Services
 {
     public class ChildService : IChildService
     {
@@ -28,25 +22,25 @@ namespace PresentationLayer.Services
             return _mapper.Map<List<ChildDtoForIndex>>(_dataManager.ChildRepo.GetAllChilds());
         }
 
-        public ChildDto GetChildById(int sotrudnikId)
+        public ChildDto GetChildById(int employee)
         {
-            return _mapper.Map<ChildDto>(_dataManager.ChildRepo.GetChildById(sotrudnikId));
+            return _mapper.Map<ChildDto>(_dataManager.ChildRepo.GetChildById(employee));
         }
 
-        public List<ChildDto> GetChildListBySotrudnikId(int sotrudnikId)
+        public List<ChildDto> GetChildListByEmployeeId(int employeeId)
         {
-            return _mapper.Map<List<ChildDto>>(_dataManager.ChildRepo.GetChildBySotrudnikId(sotrudnikId));
+            return _mapper.Map<List<ChildDto>>(_dataManager.ChildRepo.GetChildByEmployeeId(employeeId));
         }
 
         public ChildDto SaveChild(ChildDto dto)
         {
-            ChildEntity child = new ChildEntity();
+            Child? child = new Child();
 
-            child.SurName = dto.SurName;
+            child.Surname = dto.Surname;
             child.Name = dto.Name;
-            child.LastName = dto.LastName;
-            child.BirthDay = dto.BirthDay;
-            child.SotrudnikId = dto.SotrudnikId;
+            child.Lastname = dto.Lastname;
+            child.Birthday = dto.BirthDay;
+            child.EmployeeId = dto.EmployeeId;
             
             var createdchild = _dataManager.ChildRepo.CreateChild(child);
 
@@ -55,20 +49,20 @@ namespace PresentationLayer.Services
 
         public ChildDto UpdateChild(ChildDto dto)
         {
-            ChildEntity child;
+            Child? child;
 
-            child = _mapper.Map<ChildEntity>(dto);
+            child = _mapper.Map<Child>(dto);
 
-            var id = _dataManager.ChildRepo.UpdateChild(child);
+            _dataManager.ChildRepo.UpdateChild(child);
 
             return dto;
         }
 
         public ChildDto DeleteChildById(ChildDto dto)
         {
-            ChildEntity child;
+            Child? child;
 
-            child = _mapper.Map<ChildEntity>(dto);
+            child = _mapper.Map<Child>(dto);
 
             _dataManager.ChildRepo.DeleteChild(child);
 

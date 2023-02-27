@@ -1,11 +1,10 @@
-﻿using PresentationLayer.Models;
-using ServiceLayer.Dto;
+﻿using ServiceLayer.Dtos;
 
 namespace ServiceLayer.Services.Interface
 {
     public interface IChildService
     {
-        ChildDto GetChildById(int sotrudnikId);
+        ChildDto GetChildById(int employee);
         List<ChildDtoForIndex> GetAllChilds();
         ChildDto SaveChild(ChildDto dto);
         ChildDto UpdateChild(ChildDto dto);

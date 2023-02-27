@@ -1,21 +1,21 @@
-﻿using DomainLayer.Repository;
-using DomainLayer.Repository.Interfaces;
+﻿using DataLayer.Repositories;
+using DataLayer.Repositories.Interfaces;
 using ServiceLayer.Managers.Interface;
 
 namespace ServiceLayer.Managers
 {
     public class DataManager : IDataManager
     {
-        private ISotrudnikRepository _sotrudnikRepository;
-        private IChildRepository _childRepository;
+        private readonly IEmployeeRepository _employeeRepository;
+        private readonly IChildRepository _childRepository;
 
-        public DataManager(ISotrudnikRepository sotrudnikRepository, IChildRepository childRepository)
+        public DataManager(IEmployeeRepository employeeRepository, IChildRepository childRepository)
         {
-            _sotrudnikRepository = sotrudnikRepository;
+            _employeeRepository = employeeRepository;
             _childRepository = childRepository;
         }
 
-        public SotrudnikRepository SotrudnikRepo { get { return (SotrudnikRepository) _sotrudnikRepository; } }
+        public EmployeeRepository EmployeeRepo { get { return (EmployeeRepository) _employeeRepository; } }
 
         public ChildRepository ChildRepo { get { return (ChildRepository) _childRepository; } }
     }

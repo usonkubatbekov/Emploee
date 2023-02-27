@@ -1,0 +1,51 @@
+﻿@model Employees.ViewModels.EmployerViewModel;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Сотрудники</h1>
+
+<p>
+    <a asp-action="Create">Добавление сотрудника</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Фамилия
+            </th>
+            <th>
+                Возраст
+            </th>
+            <th>
+                Позиция
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model.EmployerDtoForIndex != null)
+        {
+            @foreach (var item in Model.EmployerDtoForIndex)
+            {
+                <tr>
+                    <td>
+                        @item.FIO
+                    </td>
+                    <td>
+                        @item.Age
+                    </td>
+                    <td>
+                        @item.Position
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Детали</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Удаление</a> |
+                        <a asp-controller="Child" asp-action="index" asp-route-id="@item.Id">Список детей</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

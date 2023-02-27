@@ -1,10 +1,10 @@
-﻿using DomainLayer.Repository;
+﻿using DataLayer.Repositories;
 
 namespace ServiceLayer.Managers.Interface
 {
     public interface IDataManager
     {
-        SotrudnikRepository SotrudnikRepo { get; }
+        EmployeeRepository EmployeeRepo { get; }
         ChildRepository ChildRepo { get; }
     }
 }

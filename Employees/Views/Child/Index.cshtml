@@ -1,0 +1,47 @@
+﻿@model Employees.ViewModels.ChildViewModel;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Сотрудники</h1>
+
+<p>
+    <a asp-action="Create" asp-route-id="@Model.EmployeeId">Добавление ребенка</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Фамилия
+            </th>
+            <th>
+                Возраст
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Childs != null)
+        {
+            @foreach (var item in Model.ChildsforIndex)
+            {
+                <tr>
+                    <td>
+                        @item.FIO
+                    </td>
+                    <td>
+                        @item.Age
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Редактировать</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Детали</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Удаление</a> |
+                        <a asp-controller="Employee" asp-action="Index" asp-route-id="@item.Id">Назад к родителю</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
