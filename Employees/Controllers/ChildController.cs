@@ -67,7 +67,6 @@ namespace Employees.Controllers
         [HttpPost]
         public IActionResult Edit(ChildDto dto)
         {
-            var child = _servicesManager.ChildService.GetChildById(dto.Id);
             _servicesManager.ChildService.UpdateChild(dto);
             return RedirectToAction("Index", "Child", new { id = dto.EmployeeId });
         }

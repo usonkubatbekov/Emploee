@@ -7,14 +7,6 @@ namespace Employees.Controllers
 {
     public class HomeController : Controller
     {
-        private IServicesManager _servicesManager;
-        private IDataManager _dataManager;
-
-        public HomeController(IServicesManager servicesManager, IDataManager dataManager)
-        {
-            _dataManager = dataManager;
-            _servicesManager = servicesManager;
-        }
 
         public IActionResult Index()
         {

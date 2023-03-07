@@ -29,7 +29,7 @@ namespace Employees.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            ViewData["PositionList"] = new SelectList(_servicesManager.PositionService.GetPositionList(), nameof(Positiondto.Id), nameof(Positiondto.Name));
+            ViewBag.PositionList = new SelectList(_servicesManager.PositionService.GetPositionList(), nameof(Positiondto.Id), nameof(Positiondto.Name));
             var employee = _servicesManager.EmployeeService.GetEmployeeById(id);
             if (employee == null) 
                 return NotFound("Not Found");
@@ -52,7 +52,7 @@ namespace Employees.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            ViewData["PositionList"] = new SelectList(_servicesManager.PositionService.GetPositionList(), nameof(Positiondto.Id), nameof(Positiondto.Name));
+            ViewBag.PositionList = new SelectList(_servicesManager.PositionService.GetPositionList(), nameof(Positiondto.Id), nameof(Positiondto.Name));
             return View();
         }
 
