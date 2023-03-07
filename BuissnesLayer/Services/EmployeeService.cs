@@ -3,6 +3,7 @@ using DataLayer.Entities;
 using ServiceLayer.Dtos;
 using ServiceLayer.Managers.Interface;
 using ServiceLayer.Services.Interface;
+using System.Collections.Generic;
 
 namespace ServiceLayer.Services
 {
@@ -45,9 +46,10 @@ namespace ServiceLayer.Services
              employee.Name = dto.Name;
              employee.Lastname = dto.Lastname;
              employee.Birthday = dto.BirthDay;
-             employee.Position = dto.Position;  
+             var position = _dataManager.PositionRepo.GetPositionById(int.Parse(dto.Position));
+             employee.Position = position.Name;
 
-             _dataManager.EmployeeRepo.CreateEmployee(employee);
+            _dataManager.EmployeeRepo.CreateEmployee(employee);
 
              return _mapper.Map<EmployeeDto>(employee);
          }

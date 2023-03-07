@@ -28,10 +28,14 @@ builder.Services.AddSingleton(mapper);
 // Repositories
 builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddTransient<IChildRepository, ChildRepository>();
+builder.Services.AddTransient<IPositionRepository, PositionRepository>();
+
 
 // Services
 builder.Services.AddTransient<IEmployeeService, EmployeeService>();
 builder.Services.AddTransient<IChildService, ChildService>();
+builder.Services.AddTransient<IPositionService, PositionService>();
+
 
 // Managers
 builder.Services.AddScoped<IServicesManager, ServicesManager>();

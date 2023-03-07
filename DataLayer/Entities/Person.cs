@@ -1,9 +1,7 @@
 ﻿namespace DataLayer.Entities
 {
-    public abstract class Person
+    public abstract class Person : IdBase
     {
-        public int Id { get; set; }
-
         public string Surname { get; set; }
 
         public string Name { get; set; }

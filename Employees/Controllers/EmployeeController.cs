@@ -1,5 +1,7 @@
-﻿using Employees.ViewModels;
+﻿using DataLayer.Entities;
+using Employees.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using ServiceLayer.Dtos;
 using ServiceLayer.Managers.Interface;
 
@@ -7,8 +9,8 @@ namespace Employees.Controllers
 {
     public class EmployeeController : Controller
     {
-        private readonly IServicesManager _servicesManager;
 
+        private readonly IServicesManager _servicesManager;
         public EmployeeController(IServicesManager servicesManager)
         {
             _servicesManager = servicesManager;
@@ -27,6 +29,7 @@ namespace Employees.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            ViewData["PositionList"] = new SelectList(_servicesManager.PositionService.GetPositionList(), nameof(Positiondto.Id), nameof(Positiondto.Name));
             var employee = _servicesManager.EmployeeService.GetEmployeeById(id);
             if (employee == null) 
                 return NotFound("Not Found");
@@ -49,13 +52,15 @@ namespace Employees.Controllers
         [HttpGet]
         public IActionResult Create()
         {
+            ViewData["PositionList"] = new SelectList(_servicesManager.PositionService.GetPositionList(), nameof(Positiondto.Id), nameof(Positiondto.Name));
             return View();
         }
 
         [HttpPost]
         public IActionResult Create(EmployeeDto dto)
         {
-            if (ModelState.IsValid)
+            var Position = dto.Position;
+            if (!ModelState.IsValid)
             {
                 _servicesManager.EmployeeService.SaveEmployee(dto);
                 return RedirectToAction("Index");

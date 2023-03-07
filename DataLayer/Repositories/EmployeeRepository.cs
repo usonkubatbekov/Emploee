@@ -1,6 +1,7 @@
 ﻿using DataLayer.Entities;
 using DataLayer.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace DataLayer.Repositories
 {

@@ -10,6 +10,7 @@ namespace ServiceLayer.Mapping
         {
             CreateMap<EmployeeDto, Employee>();
             CreateMap<Employee, EmployeeDto>();
+            CreateMap<Position, Positiondto>().ReverseMap();
 
             CreateMap<Employee, EmloyeeDtoforIndex>()
                 .ForMember(dst => dst.Id, opt => opt.MapFrom(src => src.Id))

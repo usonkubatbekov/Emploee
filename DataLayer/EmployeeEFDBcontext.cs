@@ -7,16 +7,19 @@ namespace DataLayer
     {
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Child> Childrens { get; set; }
+        public DbSet<Position> Positions { get; set; }
+
 
         public EmployeeEFDBcontext(DbContextOptions<EmployeeEFDBcontext> options)
             : base(options) { }
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Child>()
                 .HasOne(u => u.Employee)
                 .WithMany(c => c.Children)
                 .HasForeignKey(u => u.EmployeeId);
+            modelBuilder.AddPositionSeed();
         }
     }
 }

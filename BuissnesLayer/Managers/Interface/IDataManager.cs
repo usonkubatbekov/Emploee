@@ -6,5 +6,7 @@ namespace ServiceLayer.Managers.Interface
     {
         EmployeeRepository EmployeeRepo { get; }
         ChildRepository ChildRepo { get; }
+        PositionRepository PositionRepo { get; }
+
     }
 }

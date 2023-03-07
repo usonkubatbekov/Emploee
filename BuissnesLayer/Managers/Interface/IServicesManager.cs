@@ -6,5 +6,6 @@ namespace ServiceLayer.Managers.Interface
     {
         EmployeeService EmployeeService { get; }
         ChildService ChildService { get; }
+        PositionService PositionService { get; }
     }
 }

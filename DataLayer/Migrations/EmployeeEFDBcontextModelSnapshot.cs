@@ -87,6 +87,55 @@ namespace DataLayer.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("DataLayer.Entities.Position", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Positions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Директор"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Заместитель директора"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Начальник"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Главный специалист"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Ведущий специалист"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Специалист"
+                        });
+                });
+
             modelBuilder.Entity("DataLayer.Entities.Child", b =>
                 {
                     b.HasOne("DataLayer.Entities.Employee", "Employee")
